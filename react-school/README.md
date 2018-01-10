@@ -20,7 +20,7 @@ To start the project you can use the following commands.
 In the src directory you will find a folder named halloworld, navigate to this folder and open the file  
 To be able to use JSX we need to import react, do so now.  
 We den create a javascript function, arrow function in ES6.  
-Make sure the function returns a <h1> tag with a greeting message inside.  
+Make sure the function returns a '<h1>' tag with a greeting message inside.  
 Finaly export the component to be able to import it later.  
 Import the component in app.js, and add the component as a html element in the return.  
 
