@@ -14,3 +14,12 @@ To start the project you can use the following commands.
 * npm start <- Development mode  
 * npm test <- Runs tests
 * npm run eject <- If you want to change the webpack/babel/lint etc.. settings run this, NOT REVERSIBLE! 
+
+
+## Youtube list homework!
+In src/youtube-list-homework you will find a minor guide how to get started.  
+Follow the instructions and try to create a youtube component that list the videos centered  
+on the screen. Dont forget to add the component to app.js  
+
+Use npm to install the module. 
+Link: https://www.npmjs.com/package/react-youtube
