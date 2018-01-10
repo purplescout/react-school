@@ -26,3 +26,8 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.emoji {
+  font-size:200%;
+  margin-top:50px;
+}
