@@ -7,3 +7,5 @@
 * Granit
 * Ali
 * Adrian
+* Dijana
+* Henrik R
