@@ -8,4 +8,5 @@
 * Ali
 * Adrian
 * Dijana
+* Richard
 * Henrik R
