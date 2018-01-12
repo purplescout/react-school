@@ -1,3 +1,7 @@
+# todo
+
+- requirements
+
 # react-school
 ### Repository for Purplescout's react-school
 
@@ -10,3 +14,4 @@
 * Dijana
 * Richard
 * Henrik R
+
