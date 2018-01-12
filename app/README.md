@@ -1,8 +1,9 @@
 TODO:
 
-- explain we use React Bootstrap https://react-bootstrap.github.io/components/alerts/
-- add purplescout favicon
-
+- homework: finish week 1 homework
+- app: explain we use React Bootstrap https://react-bootstrap.github.io/components/alerts/
+- app: add purplescout favicon
+- how to set up IDE with eslint?
 
 # Create-react-app
 In this course we utilize the "create-react-app" npm module to easier set up a base project with all the parts needed for starting your react journey.
