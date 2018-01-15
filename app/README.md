@@ -5,9 +5,9 @@ For more about create-react-app visit the link below!
 Link: https://goo.gl/U53Dh1
 
 ## ESLINT
-Link Sublime Text 3: http://jonathancreamer.com/setup-eslint-with-es6-in-sublime-text/
-Link Atom: https://medium.freecodecamp.org/how-to-set-up-eslint-in-atom-to-contribute-to-freecodecamp-3467dee86e2c
-Link VS Code: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+Link Sublime Text 3: http://jonathancreamer.com/setup-eslint-with-es6-in-sublime-text/  
+Link Atom: https://medium.freecodecamp.org/how-to-set-up-eslint-in-atom-to-contribute-to-freecodecamp-3467dee86e2c  
+Link VS Code: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint  
 
 ## React Bootstrap
 To make the coding part easier we have chosen to use React Bootstrap for CSS related coding.  
