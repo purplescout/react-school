@@ -24,7 +24,8 @@ const images = {
   websitePurpleScoutComponents1: require("../assets/website-purplescout-components-1.png"),
   websitePurpleScoutComponents2: require("../assets/website-purplescout-components-2.png"),
   websitePurpleScoutComponents3: require("../assets/website-purplescout-components-3.png"),
-  websitePurpleScoutComponents4: require("../assets/website-purplescout-components-4.png")
+  websitePurpleScoutComponents4: require("../assets/website-purplescout-components-4.png"),
+  kublerRossGrievingCurve: require("../assets/kubler-ross-grieving-curve.png")
 };
 
 preloader(images);
@@ -34,6 +35,8 @@ import createTheme from "spectacle/lib/themes/default";
 
 // Require CSS
 require("normalize.css");
+
+import "prismjs/components/prism-jsx";
 
 const theme = createTheme(
   {
@@ -87,7 +90,7 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
           <BlockQuote>
             <Quote>Components are your main tool of abstraction</Quote>
-            <Cite textColor="quarternary">France is Bacon</Cite>
+            <Cite textColor="quarternary">Winston Churchill</Cite>
           </BlockQuote>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary">
@@ -129,7 +132,7 @@ export default class Presentation extends React.Component {
             lang="jsx"
             source={`<App>
   <NavBar>
-    <Logo />
+    <Logo size="small" />
     <Menu>
       <MenuItem>Varför lila</MenuItem>
       <MenuItem>...</MenuItem>
@@ -147,20 +150,40 @@ export default class Presentation extends React.Component {
             Components
           </Heading>
           <Text style={{ marginTop: 20, marginBottom: 20 }}>
-            Components are Javascript objects.
+            You can configure components by passing attributes.
           </Text>
           <CodePane
             style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
             lang="jsx"
+            source={`<Logo size="small" />
+<Events count="2" />
+<Teaser image="flygande-johan" />`}
+          />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary">
+          <Heading size={6} textColor="tertiary" caps>
+            Components
+          </Heading>
+          <Text style={{ marginTop: 20, marginBottom: 20 }}>
+            Components are Javascript objects.
+          </Text>
+          <CodePane
+            style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
+            lang="javascript"
             source={`// <Logo size="small" />
 
 function Logo (props) {
-  return <img src="purple-logo.png" class={props.size} />;
+  return React.createElement(
+    'img', {
+      src: 'purple-logo.png',
+      className: props.size,
+    },
+  );
 }`}
           />
           <Text style={{ marginTop: 20 }}>
-            // TODO: JSX!! The most simple form is a function that takes data
-            and returns HTML.
+            The most simple component is a function that transforms data into
+            HTML.
           </Text>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary">
@@ -168,17 +191,119 @@ function Logo (props) {
             Components
           </Heading>
           <CodePane
-            style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
+            style={{ fontSize: 20, paddingLeft: 60, paddingRight: 60 }}
             lang="jsx"
             source={`// <Logo size="small" />
 
-const Logo = ({ size }) =>
-  <img src="purple-logo.png" class={props.size} />;
+function Logo(props) {
+  return <img src=\"purple-logo.png\" className={props.size} />;
+}
+`}
+          />
+          <Text style={{ marginTop: 20 }}>
+            This is JSX. More readable, less boilerplate.<br />Eventually, you
+            will love it.
+          </Text>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary">
+          <Heading size={6} textColor="tertiary" caps>
+            K&uuml;bler-Ross Grieving Curve
+          </Heading>
+          <Image src={images.kublerRossGrievingCurve.replace("/", "")} />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary">
+          <Heading size={6} textColor="tertiary" caps>
+            Components
+          </Heading>
+          <CodePane
+            style={{ fontSize: 20, paddingLeft: 0, paddingRight: 0 }}
+            lang="jsx"
+            source={`// <Logo size="small" />
+
+const Logo = ({ size }) => <img src=\"purple-logo.png\" className={size} />;
 `}
           />
           <Text style={{ marginTop: 20 }}>
             Often written in latest ES6 or newer.
           </Text>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary">
+          <Heading size={6} textColor="tertiary" caps>
+            Components
+          </Heading>
+          <Text style={{ marginTop: 20 }}>
+            JSX is syntactic sugar for React.createElement
+          </Text>
+          <CodePane
+            style={{ fontSize: 20, paddingLeft: 50, paddingRight: 50 }}
+            lang="jsx"
+            source={`// jsx
+{
+  [1, 2].map(
+    count => <h1>{Math.pow(count, 2)}</h1>
+  );
+}
+
+// js
+[1, 2].map(
+  count => React.createElement('h1', null, Math.pow(count, 2))
+);
+`}
+          />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary">
+          <Heading size={6} textColor="tertiary" caps>
+            Components
+          </Heading>
+          <CodePane
+            style={{ fontSize: 20, paddingLeft: 0, paddingRight: 0 }}
+            lang="jsx"
+            source={`const Logo = ({ size }) => (
+  <img src=\"purple-logo.png\" className={size} />
+);
+
+const Logo = ({ size }) => (
+  <img
+    src=\"purple-logo.png\"
+    className={size} />
+);
+
+const Logo = ({ size }) => (
+  <img
+                  src=\"purple-logo.png\"
+    className={size}
+             />
+);
+`}
+          />
+          <Text style={{ marginTop: 20 }}>
+            Use <code>()</code> for multiline. Indentation is ignored.
+          </Text>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary">
+          <Heading size={6} textColor="tertiary" caps>
+            Components
+          </Heading>
+          <Text style={{ marginTop: 20 }}>
+            Use ternary operator intead of if-statement.
+          </Text>
+          <CodePane
+            style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
+            lang="js"
+            source={`// broken
+React.createElement('h1', if (Math.random() > 0.5) {
+  return 'you win!';
+} else {
+  return 'you lose';
+});
+
+// works
+React.createElement('h1', Math.random() > 0.5
+  ? 'you win!'
+  : 'you lose'
+);
+`}
+          />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary">
           <Heading size={6} textColor="tertiary" caps>
@@ -205,6 +330,56 @@ const Event = ({ event }) => (
           <Text style={{ marginTop: 20 }}>
             Components can be composed, hiding implementation details.
           </Text>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary">
+          <Heading size={6} textColor="tertiary" caps>
+            A very small react app
+          </Heading>
+          <CodePane
+            style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
+            lang="html"
+            source={`<html>
+  <head>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script>
+      ReactDOM.render(
+        React.createElement('img', {
+          src: 'purple-logo.png',
+          className: props.size,
+        }),
+        document.getElementById("root"),
+      );
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>`}
+          />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary">
+          <Heading size={6} textColor="tertiary" caps>
+            A very small react app
+          </Heading>
+          <Text style={{ marginTop: 20 }}>
+            <code>index.js</code>
+          </Text>
+          <CodePane
+            style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
+            lang="jsx"
+            source={`import React from "react";
+import ReactDOM from "react-dom";
+
+const Logo = ({ size }) =>
+  <img src=\"purple-logo.png\" className={size} />;
+
+ReactDOM.render(
+  <Logo size="small">,
+  document.getElementById("root"),
+);
+            `}
+          />
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
           <BlockQuote>
@@ -389,11 +564,15 @@ const Event = ({ event }) => (
             <ListItem>you get shit done</ListItem>
           </List>
         </Slide>
-        <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
-          <BlockQuote>
-            <Quote>Declarative eats imperative for breakfast</Quote>
-            <Cite textColor="quarternary">Winston Churchill</Cite>
-          </BlockQuote>
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading size={6} textColor="secondary" caps>
+            Next week
+          </Heading>
+          <List>
+            <ListItem>State</ListItem>
+            <ListItem>Event handling</ListItem>
+            <ListItem>Interactive</ListItem>
+          </List>
         </Slide>
       </Deck>
     );
