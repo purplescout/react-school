@@ -1,15 +1,19 @@
-TODO:
-
-- homework: finish week 1 homework
-- app: explain we use React Bootstrap https://react-bootstrap.github.io/components/alerts/
-- app: add purplescout favicon
-- how to set up IDE with eslint?
-
 # Create-react-app
 In this course we utilize the "create-react-app" npm module to easier set up a base project with all the parts needed for starting your react journey.
 
 For more about create-react-app visit the link below!
 Link: https://goo.gl/U53Dh1
+
+## ESLINT
+Link Sublime Text 3: http://jonathancreamer.com/setup-eslint-with-es6-in-sublime-text/
+Link Atom: https://medium.freecodecamp.org/how-to-set-up-eslint-in-atom-to-contribute-to-freecodecamp-3467dee86e2c
+Link VS Code: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+
+## React Bootstrap
+To make the coding part easier we have chosen to use React Bootstrap for CSS related coding.  
+Since this course is not going to focus on any CSS we wont discuss this in the courses.  
+If you still like to know more about it we suggest you have a look at the link bellow or check out the code base for this repo, for some examples of how to handle CSS in React.
+Link: https://react-bootstrap.github.io/components/alerts/  
 
 ## How to get started?!
 You will find the lessons in the 'src' folder in the project.
