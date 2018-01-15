@@ -30,7 +30,8 @@ Import the component in app.js, and add the component as a html element in the r
 
 TODO:
 
-- `.youtubeCentered`
+To make the coding easier CSS will be done on our behalf, all you need to do is simply add  
+a tag in the JSX element like so `className="the CSS class"`, in this exercise use `youtubeCentered`  
 
 In src directory you will find a folder named youtube-list-homework, navigate to this folder and open the file.
 Start with installing the npm module react-youtube, 'npm install react-youtube --save'
