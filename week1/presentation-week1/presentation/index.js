@@ -574,6 +574,51 @@ ReactDOM.render(
             <ListItem>Interactive</ListItem>
           </List>
         </Slide>
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
+          <Heading size={6} textColor="primary" caps>
+            Coffee break <br/><br/>
+            c[_]
+          </Heading>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading size={6} textColor="secondary" caps>
+            How to get started?!
+          </Heading>
+          <List>
+            <ListItem>npm install</ListItem>
+            <ListItem>navigate to app</ListItem>
+            <ListItem>npm start</ListItem>
+            <ListItem>app/src/week1</ListItem>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
+          <Heading size={6} textColor="primary" caps>
+            Hello World
+          </Heading>
+          <List>
+            <ListItem>GitHub: react-school/week1/</ListItem>
+            <ListItem>app/src/week1/helloworld</ListItem>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading size={6} textColor="secondary" caps>
+            Homework!! Yeay....not
+          </Heading>
+          <List>
+            <ListItem>GitHub: react-school/week1/</ListItem>
+            <ListItem>app/src/week1/youtube-list</ListItem>
+            <br/>
+            <Text>Example in react-school/week1/examples</Text>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="tertiary">
+          <Heading size={3} textColor="primary" caps>
+            Thank you!
+          </Heading><br/>
+          <Heading size={6} textColor="primary" transition={["fade"]}>
+            (•_•) ( •_•)>⌐■-■ (⌐■_■)
+          </Heading>
+        </Slide>
       </Deck>
     );
   }
