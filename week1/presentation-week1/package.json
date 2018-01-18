@@ -7,7 +7,6 @@
     "clean": "rimraf dist",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.production.js",
     "lint": "eslint --ext .js,.jsx .",
-    "deploy": "npm run clean & npm run build && surge -p .",
     "export": "spectacle-renderer --delay 3000",
     "start": "cross-env NODE_ENV=development node server.js"
   },
@@ -55,7 +54,6 @@
     "redbox-react": "^1.5.0",
     "rimraf": "^2.6.2",
     "style-loader": "^0.19.0",
-    "surge": "latest",
     "url-loader": "^0.6.2",
     "webpack": "3.8.1",
     "webpack-dev-middleware": "^1.12.0",
