@@ -1,47 +1,32 @@
-# Week 1: Introduction to React
+# Week 2: *change
 
 
 ## Presentation
 
-### Contents
+### Contents *change
 
 * basic idea behind React
 * JSX
 * ES6
 * state functional components
 
-### View presentation
+### View presentation *keep?
 
 - go to presentation folder for this week
 - `npm install`
 - `npm start`
 
-### Hello World!
-In the src directory you will find a folder named halloworld, navigate to this folder and open the file
-To be able to use JSX we need to import react, do so now.
-We den create a javascript function, arrow function in ES6.
-Make sure the function returns a '< h1 >' tag with a greeting message inside.
-Finaly export the component to be able to import it later.
-Import the component in app.js, and add the component as a html element in the return.
+### Youtube video switcher!
+In the week2 folder in app/src, you will find a folder named youtube, with an empty file.  
+Use this file to create a component that can switch between two or more videos in the youtube componnent  
+Try remembering last fridays homework, or have a look in the examples folder in root/week2/examples  
 
 ## Homework
 
-### Youtube list homework!
+### Counter!
 
-To make the coding easier CSS will be done on our behalf, all you need to do is simply add  
-a tag in the JSX element like so `className="the CSS class"`, in this exercise use `youtubeCentered`  
-
-In src directory you will find a folder named youtube-list-homework, navigate to this folder and open the file.
-Start with installing the npm module react-youtube, 'npm install react-youtube --save'
-To start you need to import react and react-youtube.
-Create your functional component.(A: Or create a class that extends component from react)
-Find a youtube video and copy the videos id from the url, the last 10 or so characters.
-Add it to the app.js file to display.
-Remove any old components like HelloWorldExample or your own HelloWorld component
-(A: try to change video on button click. ^ Hint use this.state/this.setState
-
-Link to react-youtube.
-Link: https://www.npmjs.com/package/react-youtube
-Link to this.state/setState.
-Link: https://reactjs.org/docs/state-and-lifecycle.html
-A = More advanced option.
+In this weeks homework we would like you to use state a lot more to familiarize you with the concept further.  
+In week2 you will find the folder named countdown with an empty js file and a css file with some classes.  
+Try to create a counter that increases every second or by your own specifications by using state.  
+If you need some assistance have a look in root/week2/examples.  
+(optional) Try to reset the counter on the click of a button, or show us your own ways to manipulate this counter.  
