@@ -269,34 +269,6 @@ export default class Presentation extends React.Component {
           </Text>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary">
-          <Heading size={6} textColor="tertiary">
-            <code>render()</code>
-          </Heading>
-          <Text style={{ marginTop: 20 }}>
-            runs when <code>this.props</code> or <code>this.state</code>{" "}
-            changes.
-          </Text>
-          <CodePane
-            style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
-            lang="jsx"
-            source={`class Status extends React.Component {
-  constructor(props) { ... }
-  componentDidMount() { ... }
-  componentWillUnmount() { ... }
-  render() {
-    const { label } = this.props;
-    const { message } = this.state;
-    return <span>{label}: {message}</span>;
-  }
-}
-
-<Status label="Le Message" message="start" />`}
-          />
-          <Text style={{ marginTop: 20 }}>
-            <code>render()</code> cannot have side-effects.
-          </Text>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary">
           <Heading size={6} textColor="tertiary" caps>
             Example
           </Heading>
@@ -325,12 +297,6 @@ export default class Presentation extends React.Component {
   }
 }`}
           />
-          <ClickableButton />
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary">
-          <Heading size={6} textColor="tertiary" caps>
-            Example
-          </Heading>
           <ClickableButton />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary">
@@ -546,17 +512,24 @@ export default class Presentation extends React.Component {
           </Heading>
           <List>
             <ListItem>all lifecycle hooks</ListItem>
-            <ListItem>DX</ListItem>
+            <ListItem><code>React.PureComponent</code></ListItem>
+            <ListItem>Error boundaries</ListItem>
+            <ListItem>Fragments</ListItem>
             <ListItem>event system</ListItem>
             <ListItem>
               <code>ref</code>s
             </ListItem>
+            <ListItem>DX</ListItem>
             <ListItem>rest of the ecosystem</ListItem>
-            <ListItem>
-              Higher-order Components, a.k.a. how to architect your app (next
-              week)
-            </ListItem>
           </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading size={6} textColor="secondary" caps>
+            Next week
+          </Heading>
+          <Text>
+            Higher-order Components, a.k.a. how to architect your app (next week)
+          </Text>
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
           <Heading size={1} textColor="primary" caps>
