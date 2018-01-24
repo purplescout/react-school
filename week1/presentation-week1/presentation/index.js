@@ -147,7 +147,7 @@ export default class Presentation extends React.Component {
             lang="jsx"
             source={`<Website>
   <NavBar>
-    <Logo size="small" />
+    <Logo size="small" title="johan" />
     <Menu>
       <MenuItem>Varför lila</MenuItem>
       ...
@@ -402,7 +402,7 @@ const Event = ({ event }) => (
 );
 
 const Events = ({ count }) =>
-  getEvents(2).map(
+  getEvents(count).map(
     event => <Event event={event} />
   );`}
           />
@@ -425,7 +425,7 @@ const Events = ({ count }) =>
       ReactDOM.render(
         React.createElement('img', {
           src: 'purple-logo.png',
-          className: props.size,
+          className: "small",
         }),
         document.getElementById("root"),
       );
@@ -665,8 +665,8 @@ ReactDOM.render(
             How to get started?!
           </Heading>
           <List>
-            <ListItem><code>npm install</code></ListItem>
             <ListItem>navigate to app</ListItem>
+            <ListItem><code>npm install</code></ListItem>
             <ListItem><code>npm start</code></ListItem>
             <ListItem>code: <code>app/src/week1</code></ListItem>
           </List>
