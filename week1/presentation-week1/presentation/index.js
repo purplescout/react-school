@@ -13,11 +13,18 @@ import {
   Slide,
   Text,
   Image,
-  CodePane,
-  S
+  CodePane
 } from "spectacle";
 
 import preloader from "spectacle/lib/utils/preloader";
+
+// Import theme
+import createTheme from "spectacle/lib/themes/default";
+
+import "prismjs/components/prism-jsx";
+
+// Require CSS
+require("normalize.css");
 
 const images = {
   reactStack: require("../assets/react-stack.png"),
@@ -30,15 +37,6 @@ const images = {
 };
 
 preloader(images);
-
-// Import theme
-import createTheme from "spectacle/lib/themes/default";
-
-// Require CSS
-require("normalize.css");
-
-import "prismjs/components/prism-jsx";
-
 const theme = createTheme(
   {
     primary: "white",
@@ -95,13 +93,6 @@ export default class Presentation extends React.Component {
             <ListItem>Cross-platform</ListItem>
           </List>
         </Slide>
-        {/* <Slide transition={["fade"]} bgColor="primary">
-          <Heading size={6} textColor="tertiary" caps>
-            Cross-platform
-          </Heading>
-          <Image style={{ marginTop: 50 }} src={images.reactStack.replace("/", "")} />
-          <Text style={{ fontSize: 14, marginTop: 20 }}><a href="https://react.jsnews.io/scripting-native-app-with-react-native-frontend-reactjs-javascript/">source</a></Text>
-        </Slide> */}
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
           <BlockQuote>
             <Quote>Components are your main tool of abstraction</Quote>
@@ -460,177 +451,6 @@ ReactDOM.render(
             `}
           />
         </Slide>
-        {/* <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
-          <BlockQuote>
-            <Quote>
-              You tell a taxi driver where to go – not how to get there.
-            </Quote>
-            <Cite textColor="quarternary">John 14:2-3</Cite>
-          </BlockQuote>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading
-            size={4}
-            textColor="tertiary"
-            caps
-            style={{ marginBottom: 80 }}
-          >
-            React is "declarative"
-          </Heading>
-          <Heading size={6} textColor="secondary" caps>
-            Declarative
-          </Heading>
-          <Text>telling the computer what result you want</Text>
-          <Heading
-            size={6}
-            textColor="secondary"
-            caps
-            style={{ marginTop: 40 }}
-          >
-            Imperative
-          </Heading>
-          <Text>telling the computer how to calculate it</Text>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>
-            Updating a UI
-          </Heading>
-          <CodePane
-            style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
-            lang="html"
-            source={`<ul>
-  <li>Item 1</li>
-  <li>Item 2</li>
-</ul>
-`}
-          />
-          <Text style={{ marginTop: 20 }}>How to add another item?</Text>
-          <CodePane
-            style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
-            lang="html"
-            source={"<li>Item 3</li>"}
-          />
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>
-            Imperative
-          </Heading>
-          <CodePane
-            style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
-            lang="javascript"
-            source="$('ul').append('<li>Item 3</li>');"
-          />
-          <List style={{ paddingLeft: 100 }}>
-            <ListItem>find the list</ListItem>
-            <ListItem>create a list item</ListItem>
-            <ListItem>append it to the list</ListItem>
-          </List>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>
-            Declarative (React)
-          </Heading>
-          <CodePane
-            style={{
-              marginTop: 40,
-              fontSize: 20,
-              paddingLeft: 100,
-              paddingRight: 100
-            }}
-            lang="jsx"
-            source={`<ul>
-  {items.map(
-    item => <li>item.name</li>
-  )}
-</ul>`}
-          />
-          <List style={{ paddingLeft: 100 }}>
-            <ListItem>define how items are rendered</ListItem>
-            <ListItem>
-              rerender when <code>items</code> changes
-            </ListItem>
-            <ListItem>update DOM</ListItem>
-          </List>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading
-            size={4}
-            textColor="tertiary"
-            caps
-            style={{ marginBottom: 40 }}
-          >
-            Jobs to do
-          </Heading>
-          <Heading size={6} textColor="secondary" caps>
-            Imperative
-          </Heading>
-          <List style={{ paddingLeft: 100 }}>
-            <ListItem>find the list</ListItem>
-            <ListItem>create a list item</ListItem>
-            <ListItem>append it to the list</ListItem>
-          </List>
-          <Heading size={6} textColor="secondary" caps>
-            Declarative
-          </Heading>
-          <List style={{ paddingLeft: 100 }}>
-            <ListItem>define how items are rendered</ListItem>
-            <ListItem>
-              rerender when <code>items</code> changes
-            </ListItem>
-            <ListItem>update DOM</ListItem>
-          </List>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading
-            size={4}
-            textColor="tertiary"
-            caps
-            style={{ marginBottom: 40 }}
-          >
-            Your jobs
-          </Heading>
-          <Heading size={6} textColor="secondary" caps>
-            Imperative
-          </Heading>
-          <List style={{ paddingLeft: 100 }}>
-            <ListItem>find the list</ListItem>
-            <ListItem>create a list item</ListItem>
-            <ListItem>append it to the list</ListItem>
-          </List>
-          <Heading size={6} textColor="secondary" caps>
-            Declarative
-          </Heading>
-          <List style={{ paddingLeft: 100 }}>
-            <ListItem>define how items are rendered</ListItem>
-            <ListItem>
-              <S type="strikethrough">
-                rerender when <code>items</code> changes
-              </S>
-            </ListItem>
-            <ListItem>
-              <S type="strikethrough">update DOM</S>
-            </ListItem>
-          </List>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>
-            Imperative
-          </Heading>
-          <Text>
-            State has to be manually maintained and synced between app and DOM.
-          </Text>
-          <Heading
-            size={6}
-            textColor="secondary"
-            caps
-            style={{ marginTop: 40 }}
-          >
-            Declarative
-          </Heading>
-          <Text>
-            View is a (pure) function of state. React takes care of the rest.
-          </Text>
-        </Slide> */}
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Heading size={6} textColor="secondary" caps>
             Why do people like React?
