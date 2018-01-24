@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Youtube from 'react-youtube'
+import Youtube from 'react-youtube';
 import './youtube-list-example.css';
 
 class YoutubeController extends Component {
