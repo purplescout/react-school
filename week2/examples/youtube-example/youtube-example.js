@@ -11,7 +11,7 @@ class YoutubeController extends Component {
 				{url: 'jsUvcjk8J5c', name: 'Irish farmer'},
 				{url: 'aXnkFd373T4', name: 'Oil? what oil?'},
 				{url: '3M_5oYU-IsU', name: 'Mans not hot!'},
-				{url: 'C_TwWsebq0M', name: 'Purple way of life'},
+				{url: 'Vfbl-PgJIa0', name: 'Circle dance'},
 				{url: 'xvFKT36uKEk', name: 'Babymac attack'},
 			],
 		}
