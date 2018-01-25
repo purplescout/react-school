@@ -11,7 +11,7 @@ class App extends Component {
         <img src={banner} className="banner" alt="banner" />
         <Menu />
         <Content />
-        <p className="emoji">
+        <p className="emoji centered">
           React school <code>(•_•) ( •_•)>⌐■-■ (⌐■_■)</code> is cool.
         </p>
       </div>

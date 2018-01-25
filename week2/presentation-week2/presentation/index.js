@@ -679,6 +679,39 @@ export default class Presentation extends React.Component {
             </Text>
           </List>
         </Slide> */}
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading size={6} textColor="secondary" caps>
+            How to get started?!
+          </Heading>
+          <List>
+            <ListItem>navigate to app</ListItem>
+            <ListItem><code>npm install</code></ListItem>
+            <ListItem><code>npm start</code></ListItem>
+            <ListItem>code: <code>app/src/week2</code></ListItem>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
+          <Heading size={6} textColor="primary" caps>
+            Youtube video controller
+          </Heading>
+          <List>
+            <ListItem>GitHub: <code>react-school/week2/</code></ListItem>
+            <ListItem><code>app/src/week2/youtube</code></ListItem>
+            <br/>
+            <Text textColor="primary">Example in<br/><code>react-school/week2/examples</code></Text>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading size={6} textColor="secondary" caps>
+            Homework!! again?.... ¯\_(ツ)_/¯
+          </Heading>
+          <List>
+            <ListItem>GitHub: <code>react-school/week2/</code></ListItem>
+            <ListItem><code>app/src/week2/countdown</code></ListItem>
+            <br/>
+            <Text>Example in<br/><code>react-school/week2/examples</code></Text>
+          </List>
+        </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="tertiary">
           <Heading size={3} textColor="primary" caps>
             Thank you

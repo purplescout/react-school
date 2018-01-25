@@ -4,7 +4,7 @@ import React from 'react';
 // Imports needed to develop, more can be added here if needed.
 /////////////////////////
 
-//import Youtube from './youtube/youtube';
+//import YoutubeController from './youtube/youtube';
 //import Countdown from './countdown/countdown';
 
 ////////////////////////
@@ -15,7 +15,7 @@ import React from 'react';
 const Week2 = () => (
 	<div>
 		<h1>Week 2</h1>
-		{/*<Youtube />*/}
+		{/*<YoutubeController />*/}
 		{/*<Countdown start={Date.now()} />*/}
 	</div>
 );
