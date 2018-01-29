@@ -2,9 +2,17 @@
 
 ## Presentation
 
+### Contents
+
 * state
 * `class`
 * Virtual DOM
+
+### View presentation
+
+* go to `/week3/presentation/`
+* `npm install`
+* `npm start`
 
 ### Youtube video switcher!
 
