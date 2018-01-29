@@ -19,7 +19,11 @@ import {
 
 import preloader from "spectacle/lib/utils/preloader";
 
-const images = {};
+const images = {
+  componentTree: require("../assets/componenttree.png"),
+  waterfall: require("../assets/waterfall.png"),
+  componentdescturturing: require("../assets/componentdescturturing.png"),
+};
 
 preloader(images);
 
@@ -80,303 +84,177 @@ export default class Presentation extends React.Component {
           <Text margin="40px 0 0" textColor="primary" size={3} bold caps>
             Week 3
           </Text>
-          <Text margin="40px 0 0" textColor="quarternary" size={3} caps>
-            ᕕ( ᐛ )ᕗ
+          <Text margin="40px 0 0" textColor="quarternary" size={3} >
+            repeate ノ(ò_óノ)
           </Text>
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary">
+        <Slide transition={["zoom"]} bgColor="tertiary">
+          <Heading size={3} caps lineHeight={1} textColor="primary">
+            Repetition
+          </Heading>
+          <Text margin="40px 0 0" textColor="quarternary" size={3} >
+            ¯\_(ツ)_/¯
+          </Text>
+        </Slide>
+        <Slide>
           <Heading size={6} textColor="tertiary" caps>
             What is React?
           </Heading>
           <List>
-            <ListItem>State</ListItem>
-            <ListItem>Virtual DOM</ListItem>
-            <ListItem>
-              <code>class</code>
-            </ListItem>
+            <ListItem>Library for building UIs</ListItem>
+            <ListItem>Component based</ListItem>
+            <ListItem>Cross-platform</ListItem>
           </List>
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary">
+        <Slide>
           <Heading size={6} textColor="tertiary" caps>
-            What is state?
-          </Heading>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary">
-          <Heading size={6} textColor="tertiary" caps>
-            What is state?
-          </Heading>
-          <Text style={{ marginTop: 20 }}>
-            Can be described as the condition the application is in.
-          </Text>
-          <Text style={{ marginTop: 20 }}>
-            The condition changes over time because events occur.
-          </Text>
-          <Text style={{ marginTop: 20 }}>
-            Events can be anything, e.g. user interactions, messages from
-            backend, etc.
-          </Text>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary">
-          <Heading size={6} textColor="tertiary" caps>
-            What is state?
-          </Heading>
-          <Text style={{ marginTop: 20 }}>
-            Ask{" "}
-            <a
-              href="https://en.wikipedia.org/wiki/State_(computer_science)"
-              target="_blank"
-            >
-              Wikipedia
-            </a>:
-          </Text>
-          <Text style={{ marginTop: 20 }}>
-            A program is stateful if it remembers preceding events or user
-            interactions<br />
-          </Text>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary">
-          <Heading size={6} textColor="tertiary" caps>
-            How do we keep track of state?
-          </Heading>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary">
-          <Heading size={6} textColor="tertiary" caps>
-            How do we keep track of state?
+            Why React?
           </Heading>
           <List>
-            <ListItem>Database / store</ListItem>
-            <ListItem>URL</ListItem>
-            <ListItem>Session</ListItem>
-            <ListItem>
-              <code>window.myState</code>
-            </ListItem>
-            <ListItem>...</ListItem>
+            <ListItem>Easy to learn and use</ListItem>
+            <ListItem>Big eco-system</ListItem>
+            <ListItem>Do more with less!</ListItem>
+            <ListItem>It's just javascript!</ListItem>
           </List>
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary">
+        <Slide>
           <Heading size={6} textColor="tertiary" caps>
-            Why is state hard?
-          </Heading>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary">
-          <Heading size={6} textColor="tertiary" caps>
-            Why is state hard?
-          </Heading>
-          <List>
-            <ListItem>Might be implicit</ListItem>
-            <ListItem>Might be hidden</ListItem>
-            <ListItem>Multiple actors</ListItem>
-            <ListItem>Multiple sources of truth</ListItem>
-            <ListItem>It changes over time</ListItem>
-            <ListItem>...</ListItem>
-          </List>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary">
-          <Heading size={6} textColor="tertiary" caps>
-            How can we manage state?
-          </Heading>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary">
-          <Heading size={6} textColor="tertiary" caps>
-            How can we manage state?
-          </Heading>
-          <List>
-            <ListItem>Isolate it</ListItem>
-            <ListItem>Single source of truth</ListItem>
-            <ListItem>Make it accessible (e.g. Dev Tools)</ListItem>
-            <ListItem>Make it explicit (e.g. Redux)</ListItem>
-            <ListItem>Make it immutable</ListItem>
-            <ListItem>...</ListItem>
-          </List>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary">
-          <Heading size={6} textColor="tertiary" caps>
-            Bonus
-          </Heading>
-          <Text style={{ marginTop: 20 }}>
-            What is the difference between state and <code>props</code> in
-            React?
-          </Text>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
-          <BlockQuote>
-            <Quote>
-              Tell the taxi driver where to go – not how to get there.
-            </Quote>
-            <Cite textColor="quarternary">John 14:2-3</Cite>
-          </BlockQuote>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading
-            size={4}
-            textColor="tertiary"
-            caps
-            style={{ marginBottom: 80 }}
-          >
-            React is "declarative"
-          </Heading>
-          <Heading size={6} textColor="secondary" caps>
-            Declarative
-          </Heading>
-          <Text>telling the computer what result you want</Text>
-          <Heading
-            size={6}
-            textColor="secondary"
-            caps
-            style={{ marginTop: 40 }}
-          >
-            Imperative
-          </Heading>
-          <Text>telling the computer how to calculate it</Text>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>
-            Updating a UI
-          </Heading>
-          <CodePane
+            JSX
+          </Heading> 
+          <br/>
+         <CodePane
             style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
-            lang="html"
-            source={`<ul>
-  <li>Item 1</li>
-  <li>Item 2</li>
-</ul>
-`}
+            lang="javascript"
+            source={`return React.createElement('div', null, 'Hello there');
+// <div> Hello there </div>`}
           />
-          <Text style={{ marginTop: 20 }}>How to add another item?</Text>
-          <CodePane
+          <Text margin="40px 0 0" textColor="tertiary">
+            HTML in your JS.
+          </Text>
+        </Slide>
+        <Slide>
+          <Heading size={6} textColor="tertiary" caps>
+            Javascript in the JSX?
+          </Heading> 
+          <br/>
+         <CodePane
             style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
-            lang="html"
-            source={"<li>Item 3</li>"}
+            lang="javascript"
+            source={`1. const Example = () => {
+2.  return {
+3.    <div style={myStyle.div}>
+4.      <h1>
+5.        {Somestring}
+6.      </h1>
+7.      <ul>
+8.        {
+9.          array.map((item) => return <li>{Item}</li>);
+10.        }
+11.      </ul>
+12.    </div>
+13.  }
+14. }`}
           />
+          <Text textColor="tertiary">
+            No statements! Ohh God no!!
+          </Text>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>
-            Imperative
+          <Heading size={6} textColor="tertiary" caps>
+            Component structure
+          </Heading>
+          <Image src={images.componentTree.replace("/", "")} />
+        </Slide>
+        <Slide bgColor="tertiary">
+          <Heading size={6} textColor="primary" caps>
+            Component usage
           </Heading>
           <CodePane
             style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
             lang="javascript"
-            source="$('ul').append('<li>Item 3</li>');"
-          />
-          <List style={{ paddingLeft: 100 }}>
-            <ListItem>find the list</ListItem>
-            <ListItem>create a list item</ListItem>
-            <ListItem>append it to the list</ListItem>
-          </List>
+            source={`import Menubar from 'menubar';
+import Content from 'content';
+import Footer from 'footer';
+
+const App = () => {
+  return {
+    <div>
+      <Menubar />
+      <Content />
+      <Footer />
+    </div>
+  }
+}`}/>
+        </Slide>
+        <Slide>
+          <Heading size={6} textColor="tertiary" caps>
+            Component destructuring
+          </Heading>
+          <br/>
+          <Image src={images.componentdescturturing.replace("/", "")} />
+        </Slide>
+        <Slide>
+          <Heading size={6} textColor="tertiary" caps>
+            Props flow, waterfall
+          </Heading>
+          <Image src={images.waterfall.replace("/", "")} />
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>
-            Declarative (React)
+          <Heading size={6} textColor="tertiary" caps>
+            Component properties = props
           </Heading>
+          <br/>
           <CodePane
-            style={{
-              marginTop: 40,
-              fontSize: 20,
-              paddingLeft: 100,
-              paddingRight: 100
-            }}
-            lang="jsx"
-            source={`<ul>
-  {items.map(
-    item => <li>item.name</li>
-  )}
-</ul>`}
-          />
-          <List style={{ paddingLeft: 100 }}>
-            <ListItem>
-              define how <code>items</code> are rendered
-            </ListItem>
-            <ListItem>
-              re-render when <code>items</code> changes
-            </ListItem>
-            <ListItem>update DOM</ListItem>
+            style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
+            lang="javascript"
+            source={`1. const Child = (props) => {
+2.  return <h1>Hello {props.name}</h1>;
+3. }
+4. const Parent = () => {
+5.   return <Child name="class" />
+6. }`}/>
+        <br/>
+        <Text>Result: <code>Hello class</code></Text>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
+          <Heading size={6} textColor="primary" caps>
+            State!
+          </Heading>
+          <List>
+            <ListItem>The apps current condition</ListItem>
+            <ListItem>Controls how the app work</ListItem>
+            <ListItem>Changed with events</ListItem>
+            <ListItem>Most things related to data</ListItem>
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading
-            size={4}
-            textColor="tertiary"
-            caps
-            style={{ marginBottom: 40 }}
-          >
-            Jobs to do
+          <Heading size={6} textColor="tertiary" caps>
+            Where do we save it?<br/>
+            And change it?
           </Heading>
-          <Heading size={6} textColor="secondary" caps>
-            Imperative
-          </Heading>
-          <List style={{ paddingLeft: 100 }}>
-            <ListItem>find the list</ListItem>
-            <ListItem>create a list item</ListItem>
-            <ListItem>append it to the list</ListItem>
+            <CodePane style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
+            lang="javascript"
+            source={`this.state = {}
+this.setState({})`} />
+          <List>
+            <ListItem>Redux / Flux</ListItem>
+            <ListItem>Backend / db</ListItem>
+            <ListItem>localstorage</ListItem>
           </List>
-          <Heading size={6} textColor="secondary" caps>
-            Declarative
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary">
+          <Heading size={6} textColor="tertiary" caps>
+            Single source of truth? Why?
           </Heading>
-          <List style={{ paddingLeft: 100 }}>
-            <ListItem>
-              define how <code>items</code> are rendered
-            </ListItem>
-            <ListItem>
-              rerender when <code>items</code> changes
-            </ListItem>
-            <ListItem>update DOM</ListItem>
+          <List>
+            <ListItem>Minimise risk</ListItem>
+            <ListItem>Isolate it</ListItem>
+            <ListItem>Immutable</ListItem>
+            <ListItem>Less bugs</ListItem>
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading
-            size={4}
-            textColor="tertiary"
-            caps
-            style={{ marginBottom: 40 }}
-          >
-            Your jobs
-          </Heading>
-          <Heading size={6} textColor="secondary" caps>
-            Imperative
-          </Heading>
-          <List style={{ paddingLeft: 100 }}>
-            <ListItem>find the list</ListItem>
-            <ListItem>create a list item</ListItem>
-            <ListItem>append it to the list</ListItem>
-          </List>
-          <Heading size={6} textColor="secondary" caps>
-            Declarative
-          </Heading>
-          <List style={{ paddingLeft: 100 }}>
-            <ListItem>
-              define how <code>items</code> are rendered
-            </ListItem>
-            <ListItem>
-              <S type="strikethrough">
-                rerender when <code>items</code> changes
-              </S>
-            </ListItem>
-            <ListItem>
-              <S type="strikethrough">update DOM</S>
-            </ListItem>
-          </List>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>
-            Imperative
-          </Heading>
-          <Text>
-            State has to be manually maintained and synced between app and DOM.
-          </Text>
-          <Heading
-            size={6}
-            textColor="secondary"
-            caps
-            style={{ marginTop: 40 }}
-          >
-            Declarative
-          </Heading>
-          <Text>
-            View is a function of state. React takes care of the rest.
-          </Text>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={5} textColor="tertiary" caps>
+          <Heading size={6} textColor="tertiary" caps>
             Virtual DOM
           </Heading>
           <Text style={{ marginTop: 40 }}>
@@ -389,292 +267,22 @@ export default class Presentation extends React.Component {
             It tries to be smart about it (be performant).
           </Text>
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={5} textColor="tertiary" caps>
-            Virtual > Real
-          </Heading>
-          <Text style={{ marginTop: 40 }}>
-            State has to be manually maintained and synced between app and DOM.
-          </Text>
-          <Text style={{ marginTop: 40 }}>
-            <i>Everything</i> has access to the DOM.
-          </Text>
-          <Text style={{ marginTop: 40 }}>
-            <i>Anything</i> can change it, at any point in time, without you
-            knowing that it happened and for what reason.
-          </Text>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary">
-          <Heading size={6} textColor="tertiary" caps>
-            Two types of components
-          </Heading>
-          <CodePane
-            style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
-            lang="jsx"
-            source={`class Event extends React.Component {
-  render() {
-    const { event } = this.props;
-    return (
-      <div>
-        <h1>{event.title}</h1>
-        <p>{event.description}</p>
-      </div>
-    );
-  }
-}
-
-<Event event={eventData} />`}
-          />
-          <Text style={{ marginTop: 20 }}>
-            Stateful <code>class</code>
-          </Text>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary">
-          <Heading size={6} textColor="tertiary">
-            <code>class</code>
+        {/*<Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
+          <Heading size={6} textColor="primary" caps>
+            Lifecycle methods
           </Heading>
           <List>
-            <ListItem>"lives" until it is GC-ed</ListItem>
-            <ListItem>
-              you can <code>setState</code> while it lives
-            </ListItem>
-            <ListItem>
-              offers <code>lifecycle</code> hooks/methods
-            </ListItem>
+            <ListItem>componentWillMount</ListItem>
+            <ListItem>componentDidMount</ListItem>
+            <ListItem>shouldComponentUpdate</ListItem>
+            <ListItem>componentWillUpdate</ListItem>
+            <ListItem>and many more...</ListItem>
           </List>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary">
-          <Heading size={6} textColor="tertiary">
-            <code>constructor(props)</code>
-          </Heading>
-          <Text style={{ marginTop: 20 }}>
-            runs once: immediately after instantiation
-          </Text>
-          <CodePane
-            style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
-            lang="jsx"
-            source={`class Status extends React.Component {
-  constructor(props) {
-    super(props); // it's still JS ...
-    this.props = {
-      label: props.label || 'Message',
-    };
-    this.state = {
-      message: props.message,
-    };
-  }
-  render() { ... }
-}
-
-<Status label="Le Message" message="start" />`}
-          />
-          <Text style={{ marginTop: 20 }}>
-            Initialize the state (also documents state shape).
-          </Text>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary">
-          <Heading size={6} textColor="tertiary">
-            <code>componentDidMount()</code>
-          </Heading>
-          <Text style={{ marginTop: 20 }}>
-            runs once: when <i>added</i> to the DOM tree.
-          </Text>
-          <CodePane
-            style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
-            lang="jsx"
-            source={`class Status extends React.Component {
-  constructor(props) { ... }
-  componentDidMount() {
-    window.thirdPartyStatusDispatcher.subscribe(
-      'message',
-      (msg) => this.setState({ message: msg }),
-    );
-  }
-  render() { ... }
-}
-
-<Status label="Le Message" message="start" />`}
-          />
-          <Text style={{ marginTop: 20 }}>
-            Trigger side-effects and update state with{" "}
-            <code>this.setState()</code>
-          </Text>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary">
-          <Heading size={6} textColor="tertiary">
-            <code>componentWillUnmount()</code>
-          </Heading>
-          <Text style={{ marginTop: 20 }}>
-            runs once: when <i>removed</i> from DOM tree.
-          </Text>
-          <CodePane
-            style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
-            lang="jsx"
-            source={`class Status extends React.Component {
-  constructor(props) { ... }
-  componentDidMount() { ... }
-  componentWillUnmount() {
-    window.thirdPartyStatusDispatcher.unsubscribe(
-      'message',
-    );
-  }
-  render() { ... }
-}
-
-<Status label="Le Message" message="start" />`}
-          />
-          <Text style={{ marginTop: 20 }}>
-            Clean up subscriptions so that it can be properly GC-ed.
-          </Text>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary">
-          <Heading size={6} textColor="tertiary">
-            <code>render()</code>
-          </Heading>
-          <Text style={{ marginTop: 20 }}>
-            runs when <code>this.props</code> or <code>this.state</code>{" "}
-            changes.
-          </Text>
-          <CodePane
-            style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
-            lang="jsx"
-            source={`class Status extends React.Component {
-  constructor(props) { ... }
-  componentDidMount() { ... }
-  componentWillUnmount() { ... }
-  render() {
-    const { label } = this.props;
-    const { message } = this.state;
-    return <span>{label}: {message}</span>;
-  }
-}
-
-<Status label="Le Message" message="start" />`}
-          />
-          <Text style={{ marginTop: 20 }}>
-            <code>render()</code> cannot have side-effects.
-          </Text>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary">
-          <Heading size={6} textColor="tertiary" caps>
-            Example
-          </Heading>
-          <CodePane
-            style={{
-              fontSize: 20,
-              paddingLeft: 80,
-              paddingRight: 80,
-              paddingBottom: 20
-            }}
-            lang="jsx"
-            source={`class ClickableButton extends React.Component {
-  constructor() {
-    super();
-    this.state = { dealWithIt: false };
-  }
-  onClick = () => {
-    this.setState({ dealWithIt: !this.state.dealWithIt });
-  };
-  render() {
-    return (
-      <button onClick={this.onClick}>
-        {this.state.dealWithIt ? "(⌐■_■)" : " ( •_•)"}
-      </button>
-    );
-  }
-}`}
-          />
-        </Slide>
-        <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
-          <BlockQuote>
-            <Quote>That's all Folks</Quote>
-            <Cite textColor="quarternary">Porky Pig</Cite>
-          </BlockQuote>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>
-            What we didn't teach you (yet)
-          </Heading>
-          <List>
-            <ListItem>all lifecycle hooks</ListItem>
-            <ListItem>
-              <code>React.PureComponent</code>
-            </ListItem>
-            <ListItem>Error boundaries</ListItem>
-            <ListItem>Fragments</ListItem>
-            <ListItem>event system</ListItem>
-            <ListItem>
-              <code>ref</code>
-            </ListItem>
-            <ListItem>DX</ListItem>
-            <ListItem>rest of the ecosystem</ListItem>
-          </List>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>
-            Next week
-          </Heading>
-          <Text>
-            Higher-order Components, a.k.a. how to architect your app (next
-            week)
-          </Text>
-        </Slide>
+        </Slide>*/}
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
           <Heading size={1} textColor="primary" caps>
             <code>c[_]&nbsp;</code>
           </Heading>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>
-            Homework assignment
-          </Heading>
-          <Text>Build whatever you want, as long as:</Text>
-          <List>
-            <ListItem>you abstract and compose components</ListItem>
-            <ListItem>it uses state</ListItem>
-            <ListItem>it interacts with a backend</ListItem>
-          </List>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>
-            Homework assignment
-          </Heading>
-          <List>
-            <ListItem>
-              you <i>have</i> to do it :)
-            </ListItem>
-            <ListItem>two weeks (next week is TF)</ListItem>
-            <ListItem>present what you've made</ListItem>
-            <ListItem>don't hesitate to ask for help</ListItem>
-          </List>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary">
-          <Heading size={6} textColor="secondary">
-            <code>fetch</code> example
-          </Heading>
-          <CodePane
-            style={{
-              fontSize: 16
-            }}
-            lang="jsx"
-            source={`class ChuckNorris extends React.Component {
-  randomJoke = () => {
-    fetch("http://api.icndb.com/jokes/random")
-      .then((resp) => resp.json())
-      .then((resp) => {
-        const { value: { joke } } = resp;
-        this.setState({ joke });
-      });
-  };
-  render() {
-    return [
-      <button onClick={this.randomJoke}>chuckle moreis</button>,
-      <p>{joke}</p>
-    ];
-  }
-}`}
-          />
-          <ChuckNorris />
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="tertiary">
           <Heading size={3} textColor="primary" caps>
