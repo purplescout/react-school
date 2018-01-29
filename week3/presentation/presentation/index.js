@@ -19,9 +19,7 @@ import {
 
 import preloader from "spectacle/lib/utils/preloader";
 
-const images = {
-  reactStack: require("../assets/react-stack.png")
-};
+const images = {};
 
 preloader(images);
 
@@ -32,6 +30,24 @@ import createTheme from "spectacle/lib/themes/default";
 require("normalize.css");
 
 import "prismjs/components/prism-jsx";
+
+class ChuckNorris extends React.Component {
+  randomJoke = () => {
+    fetch("http://api.icndb.com/jokes/random")
+      .then((resp) => resp.json())
+      .then((resp) => {
+        const { value: { joke } } = resp;
+        this.setState({ joke });
+      });
+  };
+  render() {
+    const { joke } = this.state || {};
+    return [
+      <button onClick={this.randomJoke}>chuckle moreis</button>,
+      <p>{joke}</p>
+    ];
+  }
+}
 
 const theme = createTheme(
   {
@@ -45,23 +61,6 @@ const theme = createTheme(
     secondary: "Helvetica"
   }
 );
-
-class ClickableButton extends React.Component {
-  constructor() {
-    super();
-    this.state = { dealWithIt: false };
-  }
-  onClick = () => {
-    this.setState({ dealWithIt: !this.state.dealWithIt });
-  };
-  render() {
-    return (
-      <button onClick={this.onClick}>
-        {this.state.dealWithIt ? "(⌐■_■)" : " ( •_•)"}
-      </button>
-    );
-  }
-}
 
 export default class Presentation extends React.Component {
   render() {
@@ -79,10 +78,10 @@ export default class Presentation extends React.Component {
             Purple Scout
           </Text>
           <Text margin="40px 0 0" textColor="primary" size={3} bold caps>
-            Week 2
+            Week 3
           </Text>
           <Text margin="40px 0 0" textColor="quarternary" size={3} caps>
-          ᕕ( ᐛ )ᕗ
+            ᕕ( ᐛ )ᕗ
           </Text>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary">
@@ -99,12 +98,12 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={["fade"]} bgColor="primary">
           <Heading size={6} textColor="tertiary" caps>
-          What is state?
+            What is state?
           </Heading>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary">
           <Heading size={6} textColor="tertiary" caps>
-          What is state?
+            What is state?
           </Heading>
           <Text style={{ marginTop: 20 }}>
             Can be described as the condition the application is in.
@@ -113,45 +112,55 @@ export default class Presentation extends React.Component {
             The condition changes over time because events occur.
           </Text>
           <Text style={{ marginTop: 20 }}>
-            Events can be anything, e.g. user interactions, messages from backend, etc.
+            Events can be anything, e.g. user interactions, messages from
+            backend, etc.
           </Text>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary">
           <Heading size={6} textColor="tertiary" caps>
-          What is state?
+            What is state?
           </Heading>
           <Text style={{ marginTop: 20 }}>
-            Ask <a href="https://en.wikipedia.org/wiki/State_(computer_science)" target="_blank">Wikipedia</a>:
+            Ask{" "}
+            <a
+              href="https://en.wikipedia.org/wiki/State_(computer_science)"
+              target="_blank"
+            >
+              Wikipedia
+            </a>:
           </Text>
           <Text style={{ marginTop: 20 }}>
-            A program is stateful if it remembers preceding events or user interactions<br />
+            A program is stateful if it remembers preceding events or user
+            interactions<br />
           </Text>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary">
           <Heading size={6} textColor="tertiary" caps>
-          How do we keep track of state?
+            How do we keep track of state?
           </Heading>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary">
           <Heading size={6} textColor="tertiary" caps>
-          How do we keep track of state?
+            How do we keep track of state?
           </Heading>
           <List>
             <ListItem>Database / store</ListItem>
             <ListItem>URL</ListItem>
             <ListItem>Session</ListItem>
-            <ListItem><code>window.myState</code></ListItem>
+            <ListItem>
+              <code>window.myState</code>
+            </ListItem>
             <ListItem>...</ListItem>
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary">
           <Heading size={6} textColor="tertiary" caps>
-          Why is state hard?
+            Why is state hard?
           </Heading>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary">
           <Heading size={6} textColor="tertiary" caps>
-          Why is state hard?
+            Why is state hard?
           </Heading>
           <List>
             <ListItem>Might be implicit</ListItem>
@@ -164,12 +173,12 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={["fade"]} bgColor="primary">
           <Heading size={6} textColor="tertiary" caps>
-          How can we manage state?
+            How can we manage state?
           </Heading>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary">
           <Heading size={6} textColor="tertiary" caps>
-          How can we manage state?
+            How can we manage state?
           </Heading>
           <List>
             <ListItem>Isolate it</ListItem>
@@ -185,7 +194,8 @@ export default class Presentation extends React.Component {
             Bonus
           </Heading>
           <Text style={{ marginTop: 20 }}>
-            What is the difference between state and <code>props</code> in React?
+            What is the difference between state and <code>props</code> in
+            React?
           </Text>
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
@@ -273,7 +283,9 @@ export default class Presentation extends React.Component {
 </ul>`}
           />
           <List style={{ paddingLeft: 100 }}>
-            <ListItem>define how <code>items</code> are rendered</ListItem>
+            <ListItem>
+              define how <code>items</code> are rendered
+            </ListItem>
             <ListItem>
               re-render when <code>items</code> changes
             </ListItem>
@@ -301,7 +313,9 @@ export default class Presentation extends React.Component {
             Declarative
           </Heading>
           <List style={{ paddingLeft: 100 }}>
-            <ListItem>define how <code>items</code> are rendered</ListItem>
+            <ListItem>
+              define how <code>items</code> are rendered
+            </ListItem>
             <ListItem>
               rerender when <code>items</code> changes
             </ListItem>
@@ -329,7 +343,9 @@ export default class Presentation extends React.Component {
             Declarative
           </Heading>
           <List style={{ paddingLeft: 100 }}>
-            <ListItem>define how <code>items</code> are rendered</ListItem>
+            <ListItem>
+              define how <code>items</code> are rendered
+            </ListItem>
             <ListItem>
               <S type="strikethrough">
                 rerender when <code>items</code> changes
@@ -384,7 +400,8 @@ export default class Presentation extends React.Component {
             <i>Everything</i> has access to the DOM.
           </Text>
           <Text style={{ marginTop: 40 }}>
-            <i>Anything</i> can change it, at any point in time, without you knowing that it happened and for what reason.
+            <i>Anything</i> can change it, at any point in time, without you
+            knowing that it happened and for what reason.
           </Text>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary">
@@ -567,7 +584,6 @@ export default class Presentation extends React.Component {
   }
 }`}
           />
-          <ClickableButton />
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
           <BlockQuote>
@@ -581,7 +597,9 @@ export default class Presentation extends React.Component {
           </Heading>
           <List>
             <ListItem>all lifecycle hooks</ListItem>
-            <ListItem><code>React.PureComponent</code></ListItem>
+            <ListItem>
+              <code>React.PureComponent</code>
+            </ListItem>
             <ListItem>Error boundaries</ListItem>
             <ListItem>Fragments</ListItem>
             <ListItem>event system</ListItem>
@@ -597,7 +615,8 @@ export default class Presentation extends React.Component {
             Next week
           </Heading>
           <Text>
-            Higher-order Components, a.k.a. how to architect your app (next week)
+            Higher-order Components, a.k.a. how to architect your app (next
+            week)
           </Text>
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
@@ -605,112 +624,57 @@ export default class Presentation extends React.Component {
             <code>c[_]&nbsp;</code>
           </Heading>
         </Slide>
-        {/* <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Heading size={6} textColor="secondary" caps>
-            Why do people like React?
+            Homework assignment
           </Heading>
+          <Text>Build whatever you want, as long as:</Text>
           <List>
-            <ListItem>small API surface: easy to learn</ListItem>
-            <ListItem>embraces Javascript</ListItem>
-            <ListItem>best in class DX</ListItem>
-            <ListItem>rich ecosystem</ListItem>
-            <ListItem>your code is scalable and maintainable</ListItem>
-            <ListItem>you get shit done</ListItem>
+            <ListItem>you abstract and compose components</ListItem>
+            <ListItem>it uses state</ListItem>
+            <ListItem>it interacts with a backend</ListItem>
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Heading size={6} textColor="secondary" caps>
-            Next week
+            Homework assignment
           </Heading>
           <List>
-            <ListItem>State</ListItem>
             <ListItem>
-              <code>class</code>
+              you <i>have</i> to do it :)
             </ListItem>
-            <ListItem>Event handling</ListItem>
-            <ListItem>Virtual DOM</ListItem>
+            <ListItem>two weeks (next week is TF)</ListItem>
+            <ListItem>present what you've made</ListItem>
+            <ListItem>don't hesitate to ask for help</ListItem>
           </List>
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>
-            How to get started?!
+        <Slide transition={["fade"]} bgColor="primary">
+          <Heading size={6} textColor="secondary">
+            <code>fetch</code> example
           </Heading>
-          <List>
-            <ListItem>
-              <code>npm install</code>
-            </ListItem>
-            <ListItem>navigate to app</ListItem>
-            <ListItem>
-              <code>npm start</code>
-            </ListItem>
-            <ListItem>
-              code: <code>app/src/week1</code>
-            </ListItem>
-          </List>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
-          <Heading size={6} textColor="primary" caps>
-            Hello World
-          </Heading>
-          <List>
-            <ListItem>
-              GitHub: <code>react-school/week1/</code>
-            </ListItem>
-            <ListItem>
-              <code>app/src/week1/helloworld</code>
-            </ListItem>
-          </List>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>
-            Homework!! Yeay....not
-          </Heading>
-          <List>
-            <ListItem>
-              GitHub: <code>react-school/week1/</code>
-            </ListItem>
-            <ListItem>
-              <code>app/src/week1/youtube-list</code>
-            </ListItem>
-            <br />
-            <Text>
-              Example in<br />
-              <code>react-school/week1/examples</code>
-            </Text>
-          </List>
-        </Slide> */}
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>
-            How to get started?!
-          </Heading>
-          <List>
-            <ListItem>navigate to app</ListItem>
-            <ListItem><code>npm install</code></ListItem>
-            <ListItem><code>npm start</code></ListItem>
-            <ListItem>code: <code>app/src/week3</code></ListItem>
-          </List>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
-          <Heading size={6} textColor="primary" caps>
-            Youtube video controller
-          </Heading>
-          <List>
-            <ListItem>GitHub: <code>react-school/week3/</code></ListItem>
-            <ListItem><code>app/src/week3/youtube</code></ListItem>
-            <br/>
-            <Text textColor="primary">Example in<br/><code>react-school/week3/examples</code></Text>
-          </List>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>
-            Homework!! again?.... ¯\_(ツ)_/¯
-          </Heading>
-          <List>
-            <ListItem>GitHub: <code>react-school/week3/</code></ListItem>
-            <ListItem><code>app/src/week3/countdown</code></ListItem>
-            <br/>
-            <Text>Example in<br/><code>react-school/week3/examples</code></Text>
-          </List>
+          <CodePane
+            style={{
+              fontSize: 16
+            }}
+            lang="jsx"
+            source={`class ChuckNorris extends React.Component {
+  randomJoke = () => {
+    fetch("http://api.icndb.com/jokes/random")
+      .then((resp) => resp.json())
+      .then((resp) => {
+        const { value: { joke } } = resp;
+        this.setState({ joke });
+      });
+  };
+  render() {
+    return [
+      <button onClick={this.randomJoke}>chuckle moreis</button>,
+      <p>{joke}</p>
+    ];
+  }
+}`}
+          />
+          <ChuckNorris />
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="tertiary">
           <Heading size={3} textColor="primary" caps>
