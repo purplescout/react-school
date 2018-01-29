@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-TODO:
-
-- how to set up IDE with eslint?
-
-=======
->>>>>>> a39aee296ea9a4107a9f2fbd754001c533be00b1
 # Create-react-app
 In this course we utilize the "create-react-app" npm module to easier set up a base project with all the parts needed for starting your react journey.
 
@@ -17,17 +10,11 @@ Link Atom: https://medium.freecodecamp.org/how-to-set-up-eslint-in-atom-to-contr
 Link VS Code: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
 
 ## React Bootstrap
-<<<<<<< HEAD
-To make the coding part easier we have chosen to use React Bootstrap for CSS related coding.  
-Since this course is not going to focus on any CSS we wont discuss this in the courses.  
-If you still like to know more about it we suggest you have a look at the link bellow or check out the code base for this repo, for some examples of how to handle CSS in React.
-Link: https://react-bootstrap.github.io/components/alerts/  
-=======
+
 To make the coding part easier we have chosen to use React Bootstrap for CSS related coding.
 Since this course is not going to focus on any CSS we wont discuss this in the courses.
 If you still like to know more about it we suggest you have a look at the link bellow or check out the code base for this repo, for some examples of how to handle CSS in React.
 Link: https://react-bootstrap.github.io/components/alerts/
->>>>>>> a39aee296ea9a4107a9f2fbd754001c533be00b1
 
 ## How to get started?!
 You will find the lessons in the 'src' folder in the project.
