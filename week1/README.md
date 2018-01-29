@@ -1,6 +1,5 @@
 # Week 1: Introduction to React
 
-
 ## Presentation
 
 ### Contents
@@ -12,11 +11,12 @@
 
 ### View presentation
 
-- go to presentation folder for this week
-- `npm install`
-- `npm start`
+* go to `/week1/presentation/`
+* `npm install`
+* `npm start`
 
 ### Hello World!
+
 In the src directory you will find a folder named halloworld, navigate to this folder and open the file
 To be able to use JSX we need to import react, do so now.
 We den create a javascript function, arrow function in ES6.
@@ -28,8 +28,8 @@ Import the component in app.js, and add the component as a html element in the r
 
 ### Youtube list homework!
 
-To make the coding easier CSS will be done on our behalf, all you need to do is simply add  
-a tag in the JSX element like so `className="the CSS class"`, in this exercise use `youtubeCentered`  
+To make the coding easier CSS will be done on our behalf, all you need to do is simply add
+a tag in the JSX element like so `className="the CSS class"`, in this exercise use `youtubeCentered`
 
 In src directory you will find a folder named youtube-list-homework, navigate to this folder and open the file.
 Start with installing the npm module react-youtube, 'npm install react-youtube --save'
