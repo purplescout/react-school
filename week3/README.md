@@ -1,12 +1,11 @@
-# Week 2: State
+# Week 3: Recap
 
 ## Presentation
 
 ### Contents
 
-* state
-* `class`
-* Virtual DOM
+* recap
+* homework assignment
 
 ### View presentation
 
@@ -14,18 +13,15 @@
 * `npm install`
 * `npm start`
 
-### Youtube video switcher!
-
-* In the 3 folder in `app/src`, you will find a folder named youtube, with an empty file.
-* Use this file to create a component that can switch between two or more videos in the youtube component
-* Try remembering last Friday's homework, or have a look in the examples folder in root/3/examples
-
 ## Homework
 
-### Counter!
+### Your project
 
-* In this weeks homework we would like you to use state a lot more to familiarise you with the concept further.
-* In 3 you will find the folder named countdown with an empty javascript file and a css file with some classes.
-* Try to create a counter that increases every second or by your own specifications by using state.
-* If you need some assistance have a look in `root/3/examples`.
-* (optional) Try to reset the counter on the click of a button, or show us your own ways to manipulate this counter.
+* This homework assignment will be the first real homework assignment, in the sense that you _have_ to do it :)
+* You have two weeks to complete the homework.
+* At next class (also in two weeks), you'll present what you've made to the rest of us.
+* You can make whatever you want, but make sure that the following applies:
+  * Abstract and compose components. Don't have one single "God" component that does everything, split it up. Make sure your components are at least three levels deep.
+  * Use state so that your application _does something_. It shouldn't be only static, it should change based on user input or other events
+  * Interact with a backend, using `fetch`. You can use a public API, [there's tonnes of them](https://github.com/toddmotto/public-apis).
+  * Continue with app in `/app` or create a new app using [`create-react-app`](https://github.com/facebook/create-react-app) (which we used for the app in this project as well).
