@@ -267,6 +267,18 @@ this.setState({})`} />
             It tries to be smart about it (be performant).
           </Text>
         </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading size={6} textColor="tertiary" caps>
+            Fetch api
+          </Heading>
+          <CodePane style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
+            lang="javascript"
+            source={`1. fetch(url, {
+2.  method: 'POST',
+3.  body: JSON.stringify(data),
+4. }).then(response => console.log(response))
+5.   .catch(error => cosole.error(error));`} />
+        </Slide>
         {/*<Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
           <Heading size={6} textColor="primary" caps>
             Lifecycle methods
