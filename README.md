@@ -10,7 +10,9 @@ Requirements for attending:
 
 ## Content
 
-You can find the content for the different weeks in the sub-folders.
+You can find the content for the different weeks in the sub-folders:
+
+- [week1](week1/README.md)
 
 ## How to work with this repo
 
