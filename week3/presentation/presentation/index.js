@@ -3,6 +3,7 @@ import React from "react";
 
 // Import Spectacle Core tags
 import {
+  Spectacle,
   BlockQuote,
   Cite,
   Deck,
@@ -16,8 +17,9 @@ import {
   CodePane,
   S
 } from "spectacle";
-
+import CodeSlide from 'spectacle-code-slide';
 import preloader from "spectacle/lib/utils/preloader";
+const code = require('../assets/example');
 
 const images = {
   componentTree: require("../assets/componenttree.png"),
@@ -132,33 +134,43 @@ export default class Presentation extends React.Component {
             HTML in your JS.
           </Text>
         </Slide>
-        <Slide>
-          <Heading size={6} textColor="tertiary" caps>
-            Javascript in the JSX?
-          </Heading> 
-          <br/>
-         <CodePane
-            style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
-            lang="javascript"
-            source={`1. const Example = () => {
-2.  return {
-3.    <div style={myStyle.div}>
-4.      <h1>
-5.        {someString}
-6.      </h1>
-7.      <ul>
-8.        {
-9.          array.map((item) => return <li>{item}</li>);
-10.        }
-11.      </ul>
-12.    </div>
-13.  }
-14. }`}
-          />
-          <Text textColor="tertiary">
-            No statements! Ohh God no!!
-          </Text>
-        </Slide>
+        <CodeSlide
+            transition={[]}
+            lang="js"
+            code={code}
+            ranges={[
+            { loc: [2,3], note: 'Use javascript in html tag'},
+            { loc: [4,5], note: 'Use javascript as value in html tag'},
+            { loc: [8,9], note: 'Create logic within html tag'},
+          ]}/>
+ {/*       <Slide>
+           <Heading size={6} textColor="tertiary" caps>
+             Javascript in the JSX?
+           </Heading> 
+           <br/>
+          <CodePane
+             style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
+             lang="javascript"
+             source={`1. const Example = () => {
+ 2.  return {
+ 3.    <div style={myStyle.div}>
+ 4.      <h1>
+ 5.        {someString}
+ 6.      </h1>
+ 7.      <ul>
+ 8.        {
+ 9.          array.map((item) => return <li>{item}</li>);
+ 10.        }
+ 11.      </ul>
+ 12.    </div>
+ 13.  }
+ 14. }`}
+           />
+           <Text textColor="tertiary">
+             No statements! Ohh God no!!
+           </Text>
+         </Slide>
+*/}
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Heading size={6} textColor="tertiary" caps>
             Component structure
