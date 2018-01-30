@@ -144,11 +144,11 @@ export default class Presentation extends React.Component {
 2.  return {
 3.    <div style={myStyle.div}>
 4.      <h1>
-5.        {Somestring}
+5.        {someString}
 6.      </h1>
 7.      <ul>
 8.        {
-9.          array.map((item) => return <li>{Item}</li>);
+9.          array.map((item) => return <li>{item}</li>);
 10.        }
 11.      </ul>
 12.    </div>
@@ -172,15 +172,15 @@ export default class Presentation extends React.Component {
           <CodePane
             style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
             lang="javascript"
-            source={`import Menubar from 'menubar';
-import Content from 'content';
-import Footer from 'footer';
+            source={`import Menubar from './menubar';
+import Landingpage from './landingpage';
+import Footer from './footer';
 
 const App = () => {
   return {
     <div>
       <Menubar />
-      <Content />
+      <Landingpage />
       <Footer />
     </div>
   }
