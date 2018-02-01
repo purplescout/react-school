@@ -3,23 +3,19 @@ import React from "react";
 
 // Import Spectacle Core tags
 import {
-  Spectacle,
-  BlockQuote,
-  Cite,
   Deck,
   Heading,
   ListItem,
   List,
-  Quote,
   Slide,
   Text,
   Image,
   CodePane,
-  S
+  Link
 } from "spectacle";
-import CodeSlide from 'spectacle-code-slide';
+import CodeSlide from "spectacle-code-slide";
 import preloader from "spectacle/lib/utils/preloader";
-const code = require('../assets/example');
+const code = require("../assets/example");
 
 const images = {
   componentTree: require("../assets/componenttree.png"),
@@ -124,9 +120,9 @@ export default class Presentation extends React.Component {
         <Slide>
           <Heading size={6} textColor="tertiary" caps>
             JSX
-          </Heading> 
+          </Heading>
           <br/>
-         <CodePane
+          <CodePane
             style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
             lang="javascript"
             source={`return React.createElement('div', null, 'Hello there');
@@ -137,18 +133,19 @@ export default class Presentation extends React.Component {
           </Text>
         </Slide>
         <CodeSlide
-            transition={[]}
-            lang="js"
-            code={code}
-            ranges={[
-            { loc: [2,3], note: 'Use javascript in html tag'},
-            { loc: [4,5], note: 'Use javascript as value in html tag'},
-            { loc: [8,9], note: 'Create logic within html tag'},
-          ]}/>
- {/*       <Slide>
+          transition={[]}
+          lang="js"
+          code={code}
+          ranges={[
+            { loc: [2, 3], note: "Use javascript in html tag" },
+            { loc: [4, 5], note: "Use javascript as value in html tag" },
+            { loc: [8, 9], note: "Create logic within html tag" }
+          ]}
+        />
+        {/*       <Slide>
            <Heading size={6} textColor="tertiary" caps>
              Javascript in the JSX?
-           </Heading> 
+           </Heading>
            <br/>
           <CodePane
              style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
@@ -211,7 +208,8 @@ const App = () => {
       <Footer />
     </div>
   }
-}`}/>
+}`}
+          />
         </Slide>
         <Slide>
           <Heading size={6} textColor="tertiary" caps>
@@ -232,9 +230,10 @@ const App = () => {
 3. }
 4. const Parent = () => {
 5.   return <Child name="class" />
-6. }`}/>
-        <br/>
-        <Text>Result: <code>Hello class</code></Text>
+6. }`}
+          />
+          <br/>
+          <Text>Result: <code>Hello class</code></Text>
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
           <Heading size={6} textColor="primary" caps>
@@ -252,10 +251,11 @@ const App = () => {
             Where do we save it?<br/>
             And change it?
           </Heading>
-            <CodePane style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
+          <CodePane style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
             lang="javascript"
             source={`this.state = {}
-this.setState({})`} />
+this.setState({})`}
+          />
           <List>
             <ListItem>Redux / Flux</ListItem>
             <ListItem>Backend / db</ListItem>
@@ -287,34 +287,62 @@ this.setState({})`} />
             It tries to be smart about it (be performant).
           </Text>
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="tertiary" caps>
-            Fetch api
-          </Heading>
-          <CodePane style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
-            lang="javascript"
-            source={`1. fetch(url, {
-2.  method: 'POST',
-3.  body: JSON.stringify(data),
-4. }).then(response => console.log(response))
-5.   .catch(error => cosole.error(error));`} />
-        </Slide>
-        {/*<Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
-          <Heading size={6} textColor="primary" caps>
-            Lifecycle methods
-          </Heading>
-          <List>
-            <ListItem>componentWillMount</ListItem>
-            <ListItem>componentDidMount</ListItem>
-            <ListItem>shouldComponentUpdate</ListItem>
-            <ListItem>componentWillUpdate</ListItem>
-            <ListItem>and many more...</ListItem>
-          </List>
-        </Slide>*/}
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
           <Heading size={1} textColor="primary" caps>
             <code>c[_]&nbsp;</code>
           </Heading>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading size={6} textColor="secondary" caps>
+            Homework assignment
+          </Heading>
+          <Text>Build whatever you want, as long as:</Text>
+          <List>
+            <ListItem>it uses state</ListItem>
+            <ListItem>it interacts with <Link target="_blank" href="https://github.com/toddmotto/public-apis" style={{ textDecoration: "underline" }}><i>a</i> backend</Link></ListItem>
+            <ListItem>you use composition instead of a single God component</ListItem>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading size={6} textColor="secondary" caps>
+            Homework assignment
+          </Heading>
+          <List>
+            <ListItem>
+              you <i>have</i> to do it :)
+            </ListItem>
+            <ListItem>two weeks (next week is TF)</ListItem>
+            <ListItem>present what you've made</ListItem>
+            <ListItem>don't hesitate to ask for help</ListItem>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary">
+          <Heading size={6} textColor="secondary">
+            <code>fetch</code> from backend: example
+          </Heading>
+          <CodePane
+            style={{
+              fontSize: 16
+            }}
+            lang="jsx"
+            source={`class ChuckNorris extends React.Component {
+  randomJoke = () => {
+    fetch("http://api.icndb.com/jokes/random")
+      .then((resp) => resp.json())
+      .then((resp) => {
+        const { value: { joke } } = resp;
+        this.setState({ joke });
+      });
+  };
+  render() {
+    return [
+      <button onClick={this.randomJoke}>chuckle moreis</button>,
+      <p>{joke}</p>
+    ];
+  }
+}`}
+          />
+          <ChuckNorris />
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary" textColor="tertiary">
           <Heading size={3} textColor="primary" caps>
