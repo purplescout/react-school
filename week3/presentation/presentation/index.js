@@ -24,7 +24,9 @@ const code = require('../assets/example');
 const images = {
   componentTree: require("../assets/componenttree.png"),
   waterfall: require("../assets/waterfall.png"),
-  componentdescturturing: require("../assets/componentdescturturing.png"),
+  componentdestructuring: require("../assets/componentdescturturing.png"),
+  god: require("../assets/god.png"),
+  abstraction: require("../assets/abstraction.png"),
 };
 
 preloader(images);
@@ -177,6 +179,19 @@ export default class Presentation extends React.Component {
           </Heading>
           <Image src={images.componentTree.replace("/", "")} />
         </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading size={6} textColor="tertiary" caps>
+            God component
+          </Heading>
+          <Image src={images.god.replace("/", "")} width="380px" height="550px" />
+        </Slide>
+        <Slide>
+          <Heading size={6} textColor="tertiary" caps>
+            Component destructuring
+          </Heading>
+          <br/>
+          <Image src={images.componentdestructuring.replace("/", "")} />
+        </Slide>
         <Slide bgColor="tertiary">
           <Heading size={6} textColor="primary" caps>
             Component usage
@@ -185,25 +200,18 @@ export default class Presentation extends React.Component {
             style={{ fontSize: 20, paddingLeft: 100, paddingRight: 100 }}
             lang="javascript"
             source={`import Menubar from './menubar';
-import Landingpage from './landingpage';
+import Content from './content';
 import Footer from './footer';
 
 const App = () => {
   return {
     <div>
       <Menubar />
-      <Landingpage />
+      <Content />
       <Footer />
     </div>
   }
 }`}/>
-        </Slide>
-        <Slide>
-          <Heading size={6} textColor="tertiary" caps>
-            Component destructuring
-          </Heading>
-          <br/>
-          <Image src={images.componentdescturturing.replace("/", "")} />
         </Slide>
         <Slide>
           <Heading size={6} textColor="tertiary" caps>
