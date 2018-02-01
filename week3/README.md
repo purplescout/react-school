@@ -1,10 +1,5 @@
 # Week 3: Recap
 
-## TODO
-
-- [ ] add god component vs react composition example
-
-
 ## Presentation
 
 ### Contents
